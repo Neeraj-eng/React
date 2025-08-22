@@ -5,8 +5,8 @@ function Input({
     amount,
     amountchange,
     currencychange,
-    amountdissabled = false,
-    currencydissabled = false,
+    amountDissabled = false,
+    currencyDissabled = false,
     currencyoptions = [],
     selectcurrency = "usd",
     className = "",
@@ -23,18 +23,18 @@ function Input({
                     className="outline-none w-full bg-transparent py-1.5"
                     type="number"
                     placeholder="Amount"
-                    disabled={amountdissabled}
+                    disabled={amountDissabled}
                     value={amount}
                     onChange={(e) => amountchange && 
-                        amountchange(number(e.target.value))}
+                        amountchange(Number(e.target.value))}
                 />
             </div>
             <div className="w-1/2 flex flex-wrap justify-end text-right">
                 <p className="text-black/40 mb-2 w-full">Currency Type</p>
                 <select
                     className="rounded-lg px-1 py-1 bg-gray-100 cursor-pointer outline-none"
+                   disabled={currencyDissabled}
                    value={selectcurrency}
-                   disabled={currencydissabled}
                    onChange={(e) => currencychange &&
                     currencychange(e.target.value)
                    }
